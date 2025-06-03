@@ -37,11 +37,15 @@ The project utilizes two main datasets:
 
 - **FinBERT**: A domain-adapted BERT model fine-tuned on financial corpora including earnings reports, regulatory filings, and financial news
 
-
+<div align=center>
+<img src="https://github.com/Seailvia/Classification-of-financial-news-based-on-sentiment-analysis-Using-Pretrained-FinBERT-Model/blob/main/FinBERT.png" width="700" height="300">
+</div>
 
 - **LoRA (Low-{insert\_element\_2\_}Rank Adaptation)**: Lightweight fine-tuning method that freezes pre-trained weights and inserts trainable low-rank matrices
 
-
+<div align=center>
+<img src="https://github.com/Seailvia/Classification-of-financial-news-based-on-sentiment-analysis-Using-Pretrained-FinBERT-Model/blob/main/Fintuned.png" width="600" height="600">
+</div>
 
 ### Training Process
 
