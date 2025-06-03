@@ -35,20 +35,22 @@ The project utilizes two main datasets:
 
 ### Model Architecture
 
-- **FinBERT**: A domain-adapted BERT model fine-tuned on financial corpora including earnings reports, regulatory filings, and financial news 
+- **FinBERT**: A domain-adapted BERT model fine-tuned on financial corpora including earnings reports, regulatory filings, and financial news
+
+
+
 - **LoRA (Low-{insert\_element\_2\_}Rank Adaptation)**: Lightweight fine-tuning method that freezes pre-trained weights and inserts trainable low-rank matrices
-  - \( W = W_0 + \Delta W \), where \( \Delta W = BA \)
-  - Applied to query and value projection layers in Transformer blocks
-  - Configured with rank \( r=8 \), scaling factor \( \alpha=32 \), and dropout rate 0.1 
+
+
 
 ### Training Process
 
 1. **Parameter Configuration**: Set dataset paths, model saving paths, sequence lengths, batch sizes, learning rates, etc. 
-2. **Model Ini{insert\_element\_4\_}tialization**: Initialize FinBERT with LoRA adapters for efficient fine-tuning 
-3. **Data Prep{insert\_element\_5\_}aration**: Load and preprocess training and validation data, compute class weights 
-4. **Model Con{insert\_element\_6\_}struction**: Build the model, set up optimizer and learning rate scheduler 
-5. **Model Tra{insert\_element\_7\_}ining**: Train for 30 epochs with AdamW optimizer, evaluate on validation data 
-6. **Model Sav{insert\_element\_8\_}ing and Deployment**: Save the best-performing model for sentiment analysis tasks 
+2. **Model Initialization**: Initialize FinBERT with LoRA adapters for efficient fine-tuning 
+3. **Data Preparation**: Load and preprocess training and validation data, compute class weights 
+4. **Model Construction**: Build the model, set up optimizer and learning rate scheduler 
+5. **Model Training**: Train for 30 epochs with AdamW optimizer, evaluate on validation data 
+6. **Model Saving and Deployment**: Save the best-performing model for sentiment analysis tasks 
 
 ## Installation
 
