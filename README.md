@@ -26,12 +26,12 @@ The project utilizes two main datasets:
    - Annotated by 16 financial specialists into positive, neutral, and negative sentiments
    - Multiple versions based on agreement strength: 100%, >75%, >66%, >50% 
 
-2. **Twitter {insert\_element\_0\_}Financial News Sentiment Dataset**:
+2. **Twitter Financial News Sentiment Dataset**:
    - 11,932 English-language finance-related tweets
    - Labeled as Bearish (negative), Bullish (positive), or Neutral
    - Represents real-time, unstructured financial information from social media 
 
-## Methodolog{insert\_element\_1\_}y
+## Methodology
 
 ### Model Architecture
 
@@ -41,7 +41,7 @@ The project utilizes two main datasets:
   - Applied to query and value projection layers in Transformer blocks
   - Configured with rank \( r=8 \), scaling factor \( \alpha=32 \), and dropout rate 0.1 
 
-### Training {insert\_element\_3\_}Process
+### Training Process
 
 1. **Parameter Configuration**: Set dataset paths, model saving paths, sequence lengths, batch sizes, learning rates, etc. 
 2. **Model Ini{insert\_element\_4\_}tialization**: Initialize FinBERT with LoRA adapters for efficient fine-tuning 
@@ -50,7 +50,7 @@ The project utilizes two main datasets:
 5. **Model Tra{insert\_element\_7\_}ining**: Train for 30 epochs with AdamW optimizer, evaluate on validation data 
 6. **Model Sav{insert\_element\_8\_}ing and Deployment**: Save the best-performing model for sentiment analysis tasks 
 
-## Installati{insert\_element\_9\_}on
+## Installation
 
 ### Prerequisites
 
@@ -60,3 +60,13 @@ The project utilizes two main datasets:
 - Scikit-learn 0.24+
 - Pandas 1.3+
 - NumPy 1.19+
+
+### Files
+
+The .py files in **finbert** are the initial finbert model, and the files in **Finbert_fintuned** are the finbert models been fintuned through two stages. The following command can be run for fintuning:
+
+```
+python predict.py --text_path "sent_valid.txt" --output_dir "output" --model_path "models\classifier_model\finbert-sentiment"
+```
+
+
